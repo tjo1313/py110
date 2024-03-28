@@ -11,7 +11,8 @@ def initialize_deck():
     random.shuffle(deck)
     return deck
 
-def total(cards):
+def total(cards): 
+    '''Takes in a list of cards and returns the total value'''
     sum_val = 0
 
     for card in cards:
@@ -85,7 +86,8 @@ while True:
     dealer_cards = pop_two_from_deck(deck)
 
     prompt(f"Dealer has {dealer_cards[0]} and ?")
-    prompt(f"You have {player_cards[0]} and {player_cards[1]}, for a total of {total(player_cards)}.")
+    prompt(f"You have {player_cards[0]} and {player_cards[1]}, for a total of "
+           f"{total(player_cards)}.")
 
     while True:
         player_choice = input("Would you like to (h)it or (s)tay? ")
@@ -121,7 +123,6 @@ while True:
         display_results(dealer_cards, player_cards)
         if play_again():
             continue
-    
     else:
         prompt(f"Dealer stays at {total(dealer_cards)}")
     
@@ -134,5 +135,3 @@ while True:
 
     if not play_again():
         break
-
-    
